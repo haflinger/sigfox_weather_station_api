@@ -53,10 +53,10 @@ app.post("/", (req, res) => {
     // Get values from application/x-www-form-urlencoded request
     const temperature = req.body.temperature || DEFAULT_VALUE;
     const humidity = req.body.humidity || DEFAULT_VALUE;
-    const pression = req.body.pression || DEFAULT_VALUE;
+    const pressure = req.body.pressure || DEFAULT_VALUE;
 
     // Prepare SQLite request
-    const request = `INSERT INTO weather VALUES ('${Date.now()}', '${temperature}', '${humidity}', '${pression}')`;
+    const request = `INSERT INTO weather VALUES ('${Date.now()}', '${temperature}', '${humidity}', '${pressure}')`;
 
     // Run SQlite request
     db.run(request, (err) => {
